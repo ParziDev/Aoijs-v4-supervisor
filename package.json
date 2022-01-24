@@ -1,6 +1,6 @@
 {
   "name": "-asdf",
-  "version": "4.6.0",
+  "version": "1.0.0",
   "description": "ParzivaL Supervisor Altyapısı",
   "main": "parzival.js",
   "scripts": {
@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aoi.js": "^4.6.0",
-    "yt-search": "^2.8.0"
+    "aoi.js": "^4.6.0"
   }
+}
