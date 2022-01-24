@@ -3,10 +3,9 @@ name:"mute",
 aliases:"sustur",
 code:`
 $sendDM[$mentioned[1];**$serverName** sunucusunda mute süren bitmiştir. Tekrardan kanallara yazabilirsin.]
-$onlyIf[$getUserVar[mute;$mentioned[1]]!=no;]
 $channelSendMessage[$channelID;<@$mentioned[1]>, Mute süren bitti. Tekrardan kanallara yazabilirsin.]
 $setUserVar[mute;no;$mentioned[1]]
-$giveRoles[$mentioned[1];$replaceText[$replaceText[$replaceText[$getServerVar[cinsiyet;$authorID];erkek;$getServerVar[erkek];-1];kız;$getServerVar[kız];-1];kayıtsız;$getServerVar[kayıtsız];-1]]
+$giveRoles[$mentioned[1];$replaceText[$replaceText[$replaceText[$getUserVar[cinsiyet;$mentioned[1]];erkek;$getServerVar[erkek];-1];kız;$getServerVar[kız];-1];kayıtsız;$getServerVar[kayıtsız];-1]]
 $takeRoles[$mentioned[1];$getServerVar[muterol]]
 
 $wait[$noMentionMessage[1]]
