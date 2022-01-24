@@ -19,7 +19,7 @@ for(const file of reader) {
 
 /////////// STATUS \\\\\\\\\\
 bot.status({
-    text: "ParzivaL Supervisor Botu",
+    text: "ParzivaL ❤️ Tokyo",
     type: "PLAYING",
     status: "dnd",
     time: 12
@@ -27,35 +27,35 @@ bot.status({
 
 /////////// VARİABLES \\\\\\\\\\
 bot.variables({
-  prefix:".",//Prefix
-  tag:"",//Tagınız
-  tagrol:"",//Tag rolü ID'si
-  taglog:"",//Tag logu ID'si
-  yasaklıtag:"",//Yasaklı tag
-  yasaklırol:"",//Yasaklı tag rolü ID'si
-  yasaklılog:"",//Yasaklı tag logu ID'si
-  jail:"no",//Elleme
-  jailrol:"",//Cezalı , Jail , Karantina rolü ID'si
-  jailhammer:"",//Jail hammer ( jail atabilicek rol ) ID'si
-  mute:"no",//Elleme
-  muterol:"",//Muted , Susturulmuş rolü ID'si
-  mutehammer:"",//Mute hammer ( Mute atabilicek rol ) ID'si
-  banhammer:"",//Ban hammer ( Ban atabilicek rol ) ID'si
-  yenihesaprol:"",//Yeni hesap rolü ID'si
-  yenihesaplog:"",//Yeni hesap logu ID'si
-  kayıtsız:"",//Kayıtsız rolü ID'si
-  erkek:"",//Erkek üye rolü ID'si
-  kız:"",//Kız üye rolü ID'si
-  cinsiyet:"kayıtsız",//Elleme
-  kayıthammer:"",//Kayıt hammer ( Kayıt yetkilisi ) rolü ID'si
-  kayıt:"",//Kayıt kanalı ID'si
-  chat:"",//Chat kanalı ID'si
-  kayıtsayı:"0",//Elleme
-  vip:"",//Vip , Özel üye rolü ID'si
-  seskanalı:"",//Ses kanalı ID'si
-  tick:"✅",//Tik Emoji ID'si
-  cross:"❎"//Çarpı Emoji ID'si
-  })
+  prefix:".",
+  tag:"⛦",
+  tagrol:"935147489403752505",
+  taglog:"935147489823174676",
+  yasaklıtag:"🐸",
+  yasaklırol:"935147489382760487",
+  yasaklılog:"935147490901123104",
+  jail:"no",
+  jailrol:"935147489403752498",
+  jailhammer:"935147489420525596",
+  mute:"no",
+  muterol:"935147489403752499", 
+  mutehammer:"935147489420525595",
+  banhammer:"935147489420525597",
+  yenihesaprol:"935147489403752500",
+  yenihesaplog:"935147491064705074",
+  kayıtsız:"935147489403752501",
+  erkek:"935147489403752502",
+  kız:"935147489403752503",
+  cinsiyet:"kayıtsız",
+  kayıthammer:"935147489437319238",
+  kayıt:"935147489613451286",
+  chat:"935147490062258200",
+  kayıtsayı:"0",
+  vip:"935147489403752506",
+  seskanalı:"935147489613451284",
+  tick:"<a:tick:935156562593472552>",
+  cross:"<a:cross:935156618298015815>"
+  }) 
 
 ////////// COMMANDS \\\\\\\\\\
 
@@ -81,15 +81,15 @@ $giveRoles[$authorID;$getServerVar[yenihesaprol]]
 
 $else
 
-**$customEmoji[kelebek_kirmizi] Aramıza hoşgeldin <@$authorID>.
+**🎉 Aramıza hoşgeldin <@$authorID>.
   
-$customEmoji[kelebek_beyaz] Seninle beraber \`$membersCount\` üyeyiz.
+Seninle beraber \`$membersCount\` üyeyiz.
 
-$customEmoji[kelebek_yesil] Kayıt olmak için <@&$getServerVar[kayıthammer]> rolündeki üyeleri bekleyin.
+Kayıt olmak için <@&$getServerVar[kayıthammer]> rolündeki üyeleri bekleyin.
 
-$customEmoji[kelebek_sari] Hesabın \`$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$creationDate[$authorID;time];and;ve;-1];seconds;Saniye;-1];minutes;Dakika;-1];hours;Saat;-1];days;Gün;-1];months;Ay;-1];weeks;Hafta;-1];years;Yıl;-1];second;Saniye;-1];minute;Dakika;-1];hour;Saat;-1];month;Ay;-1];year;Yıl;-1];week;Hafta;-1]\` önce kurulmuş.
+Hesabın \`$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$creationDate[$authorID;time];and;ve;-1];seconds;Saniye;-1];minutes;Dakika;-1];hours;Saat;-1];days;Gün;-1];months;Ay;-1];weeks;Hafta;-1];years;Yıl;-1];second;Saniye;-1];minute;Dakika;-1];hour;Saat;-1];month;Ay;-1];year;Yıl;-1];week;Hafta;-1]\` önce kurulmuş.
 
-$customEmoji[kelebek_mor] Tagımızı alarak ( \`⛦\` , \`#0400\` ) ailemize katılabilirsin.**
+Tagımızı alarak ( \`⛦\` , \`#0400\` ) ailemize katılabilirsin.**
 
 $giveRoles[$authorID;$getServerVar[kayıtsız]]
 $changeNickname[$authorID;• İsim | Yaş]
