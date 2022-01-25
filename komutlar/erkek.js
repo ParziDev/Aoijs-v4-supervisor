@@ -8,7 +8,7 @@ module.exports = {
   $setUserVar[cinsiyet;erkek;$message[1]]
   $setUserVar[kayıtsayı;$sum[1;$getUserVar[kayıtsayı;$authorID]];$authorID]
   $changeNickname[$message[1];$getServerVar[tag] $message[2] | $message[3]]
-  $setRoles[$message[1];$getServerVar[erkek];$getServerVar[booster]]
+  $setRoles[$message[1];$getServerVar[erkek]]
   $onlyIf[$isNumber[$message[3]]==true;$getServerVar[cross] <@$authorID>, Üyenin yaşını gir.]
   $onlyIf[$message[3]!=;$getServerVar[cross] <@$authorID>, Üyenin yaşını gir.]
   $onlyIf[$message[2]!=;$getServerVar[cross] <@$authorID>, Üyenin ismini gir.]
