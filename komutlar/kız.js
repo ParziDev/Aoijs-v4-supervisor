@@ -5,7 +5,7 @@ module.exports = {
   $if[$mentioned[1]==]
   $channelSendMessage[$getServerVar[chat];<@$message[1]>{delete:3s}]
   $channelSendMessage[$channelID;{author:Üye kayıt edildi!:$userAvatar[$mentioned[1]]}{description:<@$message[1]> adlı üyeye <@&$getServerVar[kız]> rolleri verildi ve kayıt edildi}{color:BLACK}{thumbnail:$userAvatar[$mentioned[1]]}]
-  $setUserVar[cinsiyet;kız;$mentioned[1]]
+  $setUserVar[cinsiyet;kız;$message[1]]
   $setUserVar[kayıtsayı;$sum[1;$getUserVar[kayıtsayı;$authorID]];$authorID]
   $changeNickname[$message[1];$getServerVar[tag] $message[2] | $message[3]]
   $setRoles[$message[1];$getServerVar[kız]]
