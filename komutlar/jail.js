@@ -11,5 +11,6 @@ $onlyIf[$rolePosition[$highestRole[$authorID]]<=$rolePosition[$highestRole[$ment
 $onlyIf[$mentioned[1]!=$authorID;$getServerVar[cross] <@$authorID>, kendini jaile atamazsın.]
 $onlyIf[$mentioned[1]!=;$getServerVar[cross] <@$authorID>, kimi jaile atmalıyım?]
 $onlyForRoles[$getServerVar[jailhammer];$getServerVar[cross] <@$authorID>, Bunu kullanamazsın.]
+$suppressErrors
   `
 }
