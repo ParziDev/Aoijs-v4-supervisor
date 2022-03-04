@@ -19,7 +19,7 @@ for(const file of reader) {
 
 /////////// STATUS \\\\\\\\\\
 bot.status({
-    text: "ParzivaL ❤️ Tokyo",
+    text: "ParzivaL",
     type: "PLAYING",
     status: "dnd",
     time: 12
@@ -28,37 +28,48 @@ bot.status({
 /////////// VARİABLES \\\\\\\\\\
 bot.variables({
   prefix:".",
-  tag:"⛦",
-  tagrol:"935147489403752505",
-  taglog:"935147489823174676",
-  yasaklıtag:"🐸",
-  yasaklırol:"935147489382760487",
-  yasaklılog:"935147490901123104",
+  tag:"",
+  tagrol:"",
+  taglog:"",
+  yasaklıtag:"",
+  yasaklırol:"",
+  yasaklılog:"",
   jail:"no",
-  jailrol:"935147489403752498",
-  jailhammer:"935147489420525596",
+  jailrol:"",
+  jailhammer:"",
   mute:"no",
-  muterol:"935147489403752499", 
-  mutehammer:"935147489420525595",
-  banhammer:"935147489420525597",
-  yenihesaprol:"935147489403752500",
-  yenihesaplog:"935147491064705074",
-  kayıtsız:"935147489403752501",
-  erkek:"935147489403752502",
-  kız:"935147489403752503",
+  muterol:"", 
+  mutehammer:"",
+  banhammer:"",
+  yenihesaprol:"",
+  yenihesaplog:"",
+  kayıtsız:"",
+  erkek:"",
+  kız:"",
   cinsiyet:"kayıtsız",
-  kayıthammer:"935147489437319238",
-  kayıt:"935147489613451286",
-  chat:"935147490062258200",
+  kayıthammer:"",
+  kayıt:"",
+  chat:"",
   kayıtsayı:"0",
-  vip:"935147489403752506",
+  vip:"",
   booster:"",
-  seskanalı:"935147489613451284",
-  tick:"<a:tick:935156562593472552>",
-  cross:"<a:cross:935156618298015815>"
+  seskanalı:"",
+  tick:"",
+  cross:""
   }) 
 
 ////////// COMMANDS \\\\\\\\\\
+
+//MUTE
+bot.timeoutCommand({
+code:`
+$sendDM[$timeoutData[mutedUserID];**$serverName** sunucusunda mute süren bitmiştir. Tekrardan kanallara yazabilirsin.]
+$channelSendMessage[$timeoutData[muteChannelID];<@$mentioned[1]>, Mute süren bitti. Tekrardan kanallara yazabilirsin.]
+$setUserVar[mute;no;$timeoutData[mutedUserID]]
+$giveRoles[$timeoutData[mutedUserID];$replaceText[$replaceText[$replaceText[$getUserVar[cinsiyet;$timeoutData[mutedUserID]];erkek;$getServerVar[erkek];-1];kız;$getServerVar[kız];-1];kayıtsız;$getServerVar[kayıtsız];-1]]
+$takeRoles[$timeoutData[mutedUserID];$getServerVar[muterol]]
+`
+})
 
 //SES AFK
 bot.readyCommand({
@@ -74,8 +85,8 @@ bot.joinCommand({
   channel:"$getServerVar[kayıt]",
   code:`
 $if[$sub[$datestamp;$creationdate[$authorID;ms]]<$multi[$multi[$multi[$multi[7;24];60];60];1000]]
-$sendDM[$authorID;**$serverName** sunucumuzda hesabın 7 günden önce açıldığı için jaile atıldın. Kayıt olmak için yetkililere ses vermen yeterli.]
-$channelSendMessage[$getServerVar[yenihesaplog];<@$authorID> **$roleName[$getServerVar[yenihesaprol]]** rolünden kurtulmak için ses teyit vermelisin.]
+$sendDM[$authorID;**$serverName** sunucumuzda hesabın 7 günden önce açıldığı için cezalandırıldın.]
+$channelSendMessage[$getServerVar[yenihesaplog];<@$authorID> Hesabın yeni olduğu için **$roleName[$getServerVar[yenihesaprol]]** rolün verildi.]
 $getServerVar[tick] \`$userTag\` adlı üyenin hesabı 7 günden önce açıldığı için cezalıya atıldı.
 $changeNickname[$authorID;• Yeni | Hesap]
 $giveRoles[$authorID;$getServerVar[yenihesaprol]]
@@ -88,9 +99,7 @@ Seninle beraber \`$membersCount\` üyeyiz.
 
 Kayıt olmak için <@&$getServerVar[kayıthammer]> rolündeki üyeleri bekleyin.
 
-Hesabın \`$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$creationDate[$authorID;time];and;ve;-1];seconds;Saniye;-1];minutes;Dakika;-1];hours;Saat;-1];days;Gün;-1];months;Ay;-1];weeks;Hafta;-1];years;Yıl;-1];second;Saniye;-1];minute;Dakika;-1];hour;Saat;-1];month;Ay;-1];year;Yıl;-1];week;Hafta;-1]\` önce kurulmuş.
-
-Tagımızı alarak ( \`⛦\` , \`#0400\` ) ailemize katılabilirsin.**
+Hesabın \`$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$creationDate[$authorID;time];and;ve;-1];seconds;Saniye;-1];minutes;Dakika;-1];hours;Saat;-1];days;Gün;-1];months;Ay;-1];weeks;Hafta;-1];years;Yıl;-1];second;Saniye;-1];minute;Dakika;-1];hour;Saat;-1];month;Ay;-1];year;Yıl;-1];week;Hafta;-1]\` önce kurulmuş.**
 
 $giveRoles[$authorID;$getServerVar[kayıtsız]]
 $changeNickname[$authorID;• İsim | Yaş]
@@ -138,7 +147,7 @@ bot.command({
 bot.awaitedCommand({
 name:"tagrol",
 code:`
-$if[$checkContains[$toLowercase[$userTag];$getServerVar[tag];#0400]==true]
+$if[$checkContains[$toLowercase[$userTag];$getServerVar[tag]]==true]
 $channelSendMessage[$getServerVar[taglog];{author:$userTag:$authorAvatar}{description:<@$authorID> (\`$authorID\`) adlı üye tagımızı aldı ve <@&$getServerVar[tagrol]> rolü verildi!}{color:GREEN}{thumbnail:$authorAvatar}]
 
 $giveRoles[$authorID;$getServerVar[tagrol]]
@@ -191,5 +200,6 @@ $onlyIf[$hasRole[$authorID;$getServerVar[yasaklırol]]==true;]
 $suppressErrors
 $endif
 $onlyIf[$isBot[$authorID]==false;]
+$onlyIf[$getServerVar[yasaklıtag]!=;]
 `
 })
