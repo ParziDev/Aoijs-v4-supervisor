@@ -2,13 +2,9 @@ module.exports = {
 name:"mute",
 aliases:"sustur",
 code:`
-$sendDM[$mentioned[1];**$serverName** sunucusunda mute süren bitmiştir. Tekrardan kanallara yazabilirsin.]
-$channelSendMessage[$channelID;<@$mentioned[1]>, Mute süren bitti. Tekrardan kanallara yazabilirsin.]
-$setUserVar[mute;no;$mentioned[1]]
-$giveRoles[$mentioned[1];$replaceText[$replaceText[$replaceText[$getUserVar[cinsiyet;$mentioned[1]];erkek;$getServerVar[erkek];-1];kız;$getServerVar[kız];-1];kayıtsız;$getServerVar[kayıtsız];-1]]
-$takeRoles[$mentioned[1];$getServerVar[muterol]]
-
-$wait[$noMentionMessage[1]]
+$setTimeout[$noMentionMessage[1];
+mutedUserID: $mentioned[1]
+muteChannelID: $channelID]
 
 $sendDM[$mentioned[1];**$serverName** sunucusunda "$replaceText[$noMentionMessage;$noMentionMessage[1];;-1] " sebebinden mutelendin.]
 $channelSendMessage[$channelID;{author:Üye mutelendi!:$userAvatar[$mentioned[1]]}{description:<@$mentioned[1]> adlı üye **$noMentionMessage[1]** boyunca "$replaceText[$noMentionMessage;$noMentionMessage[1];;-1] " sebebinden susturuldu}{color:BLACK}{thumbnail:$userAvatar[$mentioned[1]]}]
